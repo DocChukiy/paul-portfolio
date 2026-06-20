@@ -39,7 +39,7 @@ export const projects = [
       'User-focused design',
     ],
     stack: ['React', 'JavaScript', 'Tailwind CSS', 'UI/UX'],
-    href: '#',
+    href: 'https://github.com/DocChukiy',
   },
   {
     title: 'Handiwave',
@@ -52,7 +52,7 @@ export const projects = [
       'Local service ecosystem',
     ],
     stack: ['React', 'JavaScript', 'Product Design', 'UI/UX'],
-    href: '#',
+    href: 'https://github.com/DocChukiy',
   },
   {
     title: 'Calculator Application',
@@ -65,7 +65,7 @@ export const projects = [
       'Clean functionality',
     ],
     stack: ['Visual Basic'],
-    href: '#',
+    href: 'https://github.com/DocChukiy',
   },
   {
     title: 'Personal Portfolio Website',
@@ -73,7 +73,7 @@ export const projects = [
       'A modern developer and product-builder portfolio designed to showcase projects, technical skills, experience, and digital product vision through a clean and interactive interface.',
     highlights: ['Responsive design', 'Animations', 'Personal branding', 'Modern UI'],
     stack: ['React', 'Tailwind CSS', 'Framer Motion'],
-    href: '#',
+    href: 'https://github.com/DocChukiy',
   },
 ];
 

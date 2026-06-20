@@ -107,6 +107,8 @@ function Projects() {
                 <a
                   className="mt-8 inline-flex w-fit items-center gap-2 rounded-md border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/80 transition hover:border-cyan-300/35 hover:bg-white/10 hover:text-white"
                   href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={`View ${project.title} project`}
                 >
                   View Project
