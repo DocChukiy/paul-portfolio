@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { currentlyBuilding } from '../data/portfolioData';
 
 const stats = [
   { value: '4+', label: 'Specializations' },
@@ -13,6 +15,8 @@ const fadeUp = {
 };
 
 function Hero() {
+  const [isProfileImageAvailable, setIsProfileImageAvailable] = useState(true);
+
   return (
     <section
       id="hero"
@@ -31,13 +35,29 @@ function Hero() {
           transition={{ staggerChildren: 0.12 }}
           className="max-w-3xl"
         >
-          <motion.p
+          <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="inline-flex max-w-full rounded-full border border-cyan-300/20 bg-white/[0.06] px-4 py-2 text-center text-[0.68rem] font-semibold uppercase leading-5 tracking-[0.16em] text-cyan-100 shadow-[0_0_35px_rgba(34,211,238,0.16)] backdrop-blur sm:text-xs sm:tracking-[0.22em]"
+            className="flex flex-col items-start gap-5 sm:flex-row sm:items-center"
           >
-            Software Developer • Product Builder • Tech Founder
-          </motion.p>
+            {isProfileImageAvailable && (
+              <div className="relative shrink-0">
+                <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 opacity-80 blur-md" />
+                <div className="relative rounded-full border border-white/15 bg-white/[0.06] p-1 shadow-[0_0_45px_rgba(34,211,238,0.22)] backdrop-blur">
+                  <img
+                    className="size-20 rounded-full object-cover sm:size-24"
+                    src="/profile.jpg"
+                    alt="Paul Igwedinma"
+                    onError={() => setIsProfileImageAvailable(false)}
+                  />
+                </div>
+              </div>
+            )}
+
+            <p className="inline-flex max-w-full rounded-full border border-cyan-300/20 bg-white/[0.06] px-4 py-2 text-center text-[0.68rem] font-semibold uppercase leading-5 tracking-[0.16em] text-cyan-100 shadow-[0_0_35px_rgba(34,211,238,0.16)] backdrop-blur sm:text-xs sm:tracking-[0.22em]">
+              Software Developer • Product Builder • Tech Founder
+            </p>
+          </motion.div>
 
           <motion.h1
             variants={fadeUp}
@@ -97,6 +117,21 @@ function Hero() {
               <h2 className="mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl">
                 Building practical technology products for Africa.
               </h2>
+
+              <div className="mt-7 space-y-3">
+                {currentlyBuilding.map((product, index) => (
+                  <motion.article
+                    key={product.title}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.08, ease: 'easeOut' }}
+                    className="rounded-xl border border-white/10 bg-black/20 p-4 backdrop-blur"
+                  >
+                    <h3 className="text-base font-bold text-white">{product.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/62">{product.description}</p>
+                  </motion.article>
+                ))}
+              </div>
 
               <div className="mt-8 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
                 {stats.map((stat, index) => (

@@ -52,7 +52,8 @@ export const projects = [
       'Local service ecosystem',
     ],
     stack: ['React', 'JavaScript', 'Product Design', 'UI/UX'],
-    href: 'https://github.com/DocChukiy',
+    href: '/projects/handiwave',
+    external: false,
   },
   {
     title: 'Calculator Application',
@@ -74,6 +75,21 @@ export const projects = [
     highlights: ['Responsive design', 'Animations', 'Personal branding', 'Modern UI'],
     stack: ['React', 'Tailwind CSS', 'Framer Motion'],
     href: 'https://github.com/DocChukiy',
+  },
+];
+
+export const currentlyBuilding = [
+  {
+    title: 'Handiwave',
+    description: 'A marketplace connecting customers with skilled artisans.',
+  },
+  {
+    title: 'TerraConnect Global',
+    description: 'A prop-tech platform for property discovery and transactions.',
+  },
+  {
+    title: 'Zahavion Technology',
+    description: 'A technology company focused on building practical digital solutions.',
   },
 ];
 

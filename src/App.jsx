@@ -7,8 +7,11 @@ import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Specializations from './components/Specializations';
+import HandiwaveCaseStudy from './pages/HandiwaveCaseStudy';
 
 function App() {
+  const isHandiwaveCaseStudy = window.location.pathname === '/projects/handiwave';
+
   return (
     <div className="min-h-screen bg-[#05050A] text-white">
       <a
@@ -17,16 +20,22 @@ function App() {
       >
         Skip to content
       </a>
-      <Navbar />
-      <main id="main-content">
-        <Hero />
-        <About />
-        <Specializations />
-        <Projects />
-        <Experience />
-        <Skills />
-        <Contact />
-      </main>
+      {isHandiwaveCaseStudy ? (
+        <HandiwaveCaseStudy />
+      ) : (
+        <>
+          <Navbar />
+          <main id="main-content">
+            <Hero />
+            <About />
+            <Specializations />
+            <Projects />
+            <Experience />
+            <Skills />
+            <Contact />
+          </main>
+        </>
+      )}
       <Footer />
     </div>
   );
