@@ -8,9 +8,12 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Specializations from './components/Specializations';
 import HandiwaveCaseStudy from './pages/HandiwaveCaseStudy';
+import TerraConnectCaseStudy from './pages/TerraConnectCaseStudy';
 
 function App() {
-  const isHandiwaveCaseStudy = window.location.pathname === '/projects/handiwave';
+  const currentPath = window.location.pathname;
+  const isHandiwaveCaseStudy = currentPath === '/projects/handiwave';
+  const isTerraConnectCaseStudy = currentPath === '/projects/terraconnect';
 
   return (
     <div className="min-h-screen bg-[#05050A] text-white">
@@ -22,6 +25,8 @@ function App() {
       </a>
       {isHandiwaveCaseStudy ? (
         <HandiwaveCaseStudy />
+      ) : isTerraConnectCaseStudy ? (
+        <TerraConnectCaseStudy />
       ) : (
         <>
           <Navbar />

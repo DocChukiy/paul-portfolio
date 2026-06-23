@@ -39,7 +39,8 @@ export const projects = [
       'User-focused design',
     ],
     stack: ['React', 'JavaScript', 'Tailwind CSS', 'UI/UX'],
-    href: 'https://github.com/DocChukiy',
+    href: '/projects/terraconnect',
+    external: false,
   },
   {
     title: 'Handiwave',
